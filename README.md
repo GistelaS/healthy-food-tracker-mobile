@@ -294,7 +294,82 @@ samples, guidance on mobile development, and a full API reference.
 
     ```
 
-    - #####
+- ## TUGAS 8 (Flutter Navigation, Layouts, Forms, and Input Elements)
+
+- ### Membuat minimal satu halaman baru pada aplikasi, yaitu halaman formulir tambah item baru dengan ketentuan sebagai berikut:
+
+    - #### Memakai minimal tiga elemen input, yaitu name, amount, description. Tambahkan elemen input sesuai dengan model pada aplikasi tugas Django yang telah kamu buat.
+
+    Pada file 
+
+    ```
+
+    trackerlist_form.dart
+
+    ```
+
+    saya menambahkan field berikut
+
+    ```
+
+     String _name = "";
+    int _page = 0;
+    String _description = "";
+
+    ```
+
+    
+
+    
+
+    
+
+    - #### Memiliki sebuah tombol Save
+    
+    Lalu saya menambahkan kode berikut
+
+    ```
+
+        Align(
+        alignment: Alignment.bottomCenter,
+        child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.indigo),
+                ),
+                onPressed: () {
+                    if (_formKey.currentState!.validate()) {}
+                },
+                child: const Text(
+                    "Save",
+                    style: TextStyle(color: Colors.white),
+                ),
+            ),
+        ),
+    ),
+
+    ```
+    - #### Setiap elemen input di formulir juga harus divalidasi dengan ketentuan sebagai berikut :
+
+        - ##### Setiap elemen input tidak boleh kosong.
+
+        ```
+
+        
+
+- ### Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+
+    - #### Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+
+    - #### Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+
+    - #### Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+
+    - ####  Bagaimana penerapan clean architecture pada aplikasi Flutter?
+
+    - #### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+
      
 
 
