@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_food_tracker/screens/menu.dart';
+import 'package:healthy_food_tracker/screens/list_food.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -19,7 +20,7 @@ class LeftDrawer extends StatelessWidget {
                   'Healthy Food Tracker',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -27,7 +28,7 @@ class LeftDrawer extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
                   "Catat seluruh progresskalori makananmu disini!",
-                  // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
+                  style: TextStyle(fontSize: 12),
                 ),
               ],
             ),
@@ -53,6 +54,17 @@ class LeftDrawer extends StatelessWidget {
     TODO: Buatlah routing ke TrackerFormPage di sini,
     setelah halaman TrackerFormPage sudah dibuat.
     */
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.library_books_rounded),
+            title: const Text('Daftar Food'),
+            onTap: () {
+              // Route menu ke halaman buku
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const FoodPage()),
+              );
             },
           ),
         ],
