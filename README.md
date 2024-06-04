@@ -673,6 +673,7 @@ samples, guidance on mobile development, and a full API reference.
 
 - ## Tugas 9 (Integrasi Web Service dengan Aplikasi Flutter)
 
+- ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!
 
 
 - ### Membuat halaman login pada proyek tugas Flutter.
@@ -875,7 +876,7 @@ samples, guidance on mobile development, and a full API reference.
 
 - ###  Membuat halaman detail untuk setiap item yang terdapat pada halaman daftar Item. 
 
-- ### 
+- ### Menjawab beberapa pertanyaan berikut pada README.md pada root folder
 
     - #### Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
 
@@ -894,6 +895,35 @@ samples, guidance on mobile development, and a full API reference.
         ```
 
         Namun, perhatikan bahwa penggunaan model disarankan untuk menghindari kesalahan dan memastikan keamanan data. Oleh karena itu, yang terbaik adalah mempertimbangkan persyaratan aplikasi dan kompleksitas data sebelum memutuskan apakah akan menggunakan suatu model.
+
+        ```
+
+    - #### Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+
+        ```
+
+        CookieRequest adalah istilah yang tidak umum digunakan dalam konteks Flutter. Namun, jika berbicara tentang manajemen cookie di aplikasi Flutter, bisa membahas tentang CookieJar. CookieJar adalah wadah permintaan HTTP dan pengelola cookie Dart. Poin penting tentang CookieJar adalah fitur memungkinkan mengelola kebijakan cookie yang rumit dan menyimpan cookie dengan mudah. Menginplementasikan kebijakan cookie default yang dinyatakan dalam Request for Commentas (RFC). Cookie disimpan dalam memori dan semua cookie dihapus setelah aplikasi ditutup. Cara menggunakan instance CookieJar perlu membuat di aplikasi Flutter.Instance ini harus dibagikan dengan semua komponen yang memerlukan pengelolaan cookie seperti permintaan HTTP atau komponen lain yang mengandung cookie. Berbagi instance yang sama memastikan bahwa aplikasi memiliki kebijakan cookie yang sama.
+
+
+        ```
+
+    - #### Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+
+        ```
+
+        Flutter menyediakan berbagai cara untuk mengambil data dari JSON dan menampilkannya di aplikasi. Berikut beberapa metode yang umum digunakan yaitu serialisasi manual metode ini melibatkan penguraian JSON secara manual menggunakan perpustakaan Dart: Convert. Dapat menggunakan dungsi jdonDecode() untuk mengonversi string JSON menjadi objek Dart. Kemudia dapat mengakses nilai yang diperlukan melalui objek hasil. Keuntungannya adalah sederhana dan tidak memerlukan ketergantungan eksternal. dan kekurangannya adalah tidak efisien untuk proyek besar dan kompleks. Serialisai otomatis dengan pembuatan kode menggunakan pustaka jsonserializable untuk secara otomatis menghasilkan kode serialisasi dan deserialisasi ketergantungan json_serializable harus ditambahkan ke pubspec.yaml. Selanjutnya, buat model kelas untuk mewakili struktur data JSON. Beri anotasi pada model kelas menggunakan @Json Serializable() dan tambahkan catatan ke properti terkait. Jalankan utilitas pembuatan kode untuk menghasilkan kode serialisasi dan deserialisasi. Keuntungannya adalah efisien dengan banyak model JSON dan proyek yang sangat kompleks. Kekurangannya membutuhkan setup awal dan dependensi tambahan. Bergantung pada kompleksitas proyek, dapat memilih antara deserialisasi manual atau otomatis menggunakan pembuatan kode.
+
+        ```
+
+    - #### Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+
+        ```
+
+        Dibawah ini akan membahas mekanisme otentikasi dari memasukkan detail akun di Flutter hingga Django menyelesaikan proses otentikasi. Registrasi dan Login (Sign Up/ Login) pada aplikasi Flutter dimana pengguna memberikan informasi seperti nama pengguna, alamat email, dan kata sandi untuk aplikasi Flutter. Aplikasi Flutter membuat permintaan ke backend Django melalui API untuk membuat akun baru atau masuk dengan akun yang sudah ada. Django backend mempunyai model pengguna yang mencakup bidang seperi nama depan, nama belakang, nama pengguna, email, dan kata sandi. Saat pengguna mendaftar, aplikasi Flutter mengirimkan data ke Django API untuk membuat entri baru di model pengguna. Saat pengguna masuk, aplikasi Flutter mengirimkan kredensial ke Django API untuk memeriksa apakah kombinasi nama pengguna dan kata sandi valid. Token otentikasi setelah login berhasil  Djano menghasilkan token otentikasi. Token ini dikirim kembalik ke aplikasi Flutter sebagai respons terhadap permintaan login. Aplikasi Flutter menyimpan token ini untuk digunakan dalam permintaan berikutnya. Menggunakan token dalam permintaan API setiap kali pengguna membuat permintaan kebackend, aplikasi Flutter menyertakan token autentikasi di header permintaan. Backend Django memeriksa token ini untuk memastikan bahwa pengguna yang mengakses data mempunyai izin yang sesuai. Menampilkan menu di Flutter setelah otentikasi berhasil, aplikasi Flutter menampilkan menu atau halaman beranda yang seusai. Data yang diterima dari backend dapat digunakan untuk mengisi aplikasi dengan konten. Jadi secara keseluruhan mekanisme autentikasi melibatkan komunikasi antara aplikasi Flutter dan backend Django melalu API dan penggunaan token autentikasi untuk mengamankan permintaan dan respons.
+
+        ```
+
+
     
     
         
